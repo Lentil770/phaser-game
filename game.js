@@ -19,9 +19,9 @@ class Level2 extends Phaser.Scene {
     gameState.player = this.physics.add.sprite(100, 200, "player");
     gameState.dragons = this.physics.add.group();
     gameState.dragonA = gameState.dragons.create(340, 100, "dragon");
-    gameState.dragonB = gameState.dragons.create(340, 3400, "dragon");
+    gameState.dragonB = gameState.dragons.create(340, 340, "dragon");
     Phaser.Actions.ScaleXY(gameState.dragons.getChildren(), -0.4, -0.4);
-    gameState.dragonA.speed = 1.5;
+    gameState.dragonA.speed = 1.7;
     gameState.dragonB.speed = 1.5;
 
     gameState.treasure = this.physics.add.image(
@@ -221,7 +221,7 @@ class StartScene extends Phaser.Scene {
 
     this.input.on("pointerdown", () => {
       this.scene.stop("StartScene");
-      this.scene.start("Level2");
+      this.scene.start("Level1");
     });
   }
 }
